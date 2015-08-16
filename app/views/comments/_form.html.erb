@@ -1,0 +1,8 @@
+<%= simple_form_for CommentForm.new(Comment.new), url: comments_path(@issue) do |f| %>
+
+<%= f.input :body, label: false, as: :text, required: true, input_html: { class: 'markdown-source', rows: 8, 'data-emoji': 'autocomplete', 'data-at-mention': 'autocomplete' } %>
+
+<div class="form-actions text-right">
+  <%= f.button :button, class: 'btn btn-lg btn-primary', data: { disable_with: "<i class='fa fa-circle-o-notch fa-spin'></i> loading..." } %>
+</div>
+<% end %>

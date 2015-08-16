@@ -1,0 +1,9 @@
+<tr>
+  <td class="text-center">#<%= issue.id %></td>
+  <td><%= status_label(issue.status) %></td>
+  <td>
+    <strong><%= link_to issue.title, issue %></strong><br>
+    <span class="text-muted"><%= local_time_ago(issue.last_commented_at) %> by <strong>@<%= issue.last_commenter_username %></strong></span>
+  </td>
+  <td class="text-center"><span class="badge"><%= issue.comments.size - 1 %></span></td>
+</tr>

@@ -1,0 +1,19 @@
+<%= content_for :title, 'Sign Up' %>
+
+<!-- Login Form -->
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { role: 'form' }) do |f| %>
+
+  <%= f.input :email, autofocus: true, class: 'form-control', placeholder: "Your email..", required: true %>
+
+  <%= f.input :username, class: 'form-control', placeholder: "Your username..", hint: 'only lowercase English characters and digits allowed', required: true %>
+
+  <%= f.input :password, class: 'form-control', placeholder: "Your password..", required: true %>
+
+  <%= f.input :password_confirmation, class: 'form-control', placeholder: "Your password again..", required: true %>
+
+<div class="form-group form-actions">
+    <%= f.button :button, 'Registrater', class: 'btn btn-lg btn-block btn-effect-ripple btn-primary', data: { disable_with: '<i class="fa fa-circle-o-notch fa-spin"></i> loading...' } %>
+</div>
+
+<% end %>
+<!-- END Login Form -->

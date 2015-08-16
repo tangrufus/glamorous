@@ -1,0 +1,13 @@
+<%= simple_form_for @issue_form, wrapper: :vertical_form do |f| %>
+
+<%= f.input :title, required: true, autofocus: true %>
+
+<%= f.simple_fields_for :comments do |c| %>
+<%= c.input :body, as: :text, required: true, input_html: { class: 'markdown-source', rows: 8, 'data-emoji': 'autocomplete', 'data-at-mention': 'autocomplete' } %>
+<% end %>
+
+<div class="form-group form-actions text-right">
+  <%= f.button :button, class: 'btn btn-lg btn-primary', data: { disable_with: "<i class='fa fa-circle-o-notch fa-spin'></i> loading..." } %>
+</div>
+
+<% end %>

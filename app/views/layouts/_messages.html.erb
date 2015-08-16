@@ -1,0 +1,23 @@
+<% unless flash.blank? %>
+  <!-- Flash Messages -->
+  <% toastr_options = 'toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": true,
+    "progressBar": true,
+    "positionClass": "toast-bottom-full-width",
+    "preventDuplicates": true
+  };' %>
+  <%= javascript_tag  toastr_options %>
+
+  <% flash.each do |key, value| %>
+    <% if value.is_a?(String) %>
+      <% context = toastr_context(key) %>
+      <% e_value = escape_javascript(value) %>
+      <% toastr_sctipt = "toastr['#{context}']('#{e_value}');" %>
+     <%= javascript_tag toastr_sctipt %>
+      <%= javascript_tag  "console.log('get');" %>
+   <% end %>
+ <% end %>
+ <!-- End Flash Messages -->
+<% end %>

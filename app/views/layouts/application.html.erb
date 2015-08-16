@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <title>Popn Issues</title>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': true %>
+  <%= stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css' %>
+
+  <%= jquery_include_tag :cloudflare %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
+
+  <%= javascript_include_tag :modernizr %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= controller.controller_name %> <%= controller.action_name %>">
+
+  <div id="page-container" class="header-fixed-top sidebar-visible-lg-full">
+
+    <%= render 'layouts/sidebar' %>
+
+    <!-- Main Container -->
+    <div id="main-container">
+
+      <%= render 'layouts/header' %>
+
+      <!-- Page content -->
+      <div id="page-content">
+
+        <% if content_for?(:header_title) %>
+        <!-- Page Header -->
+        <div class="content-header">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="header-section">
+                <h1><%= yield(:header_title) %></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END Page Header -->
+        <% end %>
+
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+
+      </div>
+      <!-- END Page Content -->
+    </div>
+    <!-- END Main Container -->
+  </div>
+  <!-- END Page Container -->
+</body>
+</html>

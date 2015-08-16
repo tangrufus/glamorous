@@ -1,0 +1,27 @@
+<%= content_for :title, 'Login' %>
+
+<!-- Login Form -->
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form', class: 'form-horizontal form-bordered' }, wrapper: :horizontal_form) do |f| %>
+<%= devise_error_messages! %>
+
+<%= f.input :login, autofocus: true, placeholder: "Your username or email..", required: true %>
+<%= f.input :password, placeholder: "Your password..", required: true %>
+
+<div class="form-group user_remember_me">
+  <label class="remember-me col-sm-4 control-label" for="user_remember_me">Remember?</label>
+  <div class="col-sm-8">
+    <label class="csscheckbox csscheckbox-primary">
+      <%= f.check_box :remember_me %>
+      <span></span>
+    </label>
+  </div>
+</div>
+
+<div class="form-group form-actions">
+  <div class="col-sm-12">
+    <%= f.button :button, 'Login', class: "pull-right btn btn-lg btn-block btn-effect-ripple btn-primary", data: { disable_with: "<i class='fa fa-circle-o-notch fa-spin'></i> loading..." } %>
+  </div>
+</div>
+
+<% end %>
+<!-- END Login Form -->

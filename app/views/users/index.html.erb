@@ -1,0 +1,38 @@
+<%= content_for :header_title, 'Users' %>
+
+<!-- Issues Content -->
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <!-- Issues Block -->
+    <div class="block">
+      <!-- Issues Title -->
+      <div class="block-title clearfix">
+        <h2>User List</h2>
+      </div>
+      <!-- END Issues Title -->
+
+        <!-- Issues List -->
+        <div id="issues-list">
+          <div class="block-content-full">
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered table-vcenter remove-margin-bottom">
+                <thead>
+                  <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Last Seen</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <%= render @users %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- END Issues List -->
+    </div>
+    <!-- END Issues Block -->
+  </div>
+</div>
+<!-- END Issues Content -->

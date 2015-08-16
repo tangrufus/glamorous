@@ -1,0 +1,18 @@
+<%= content_for :title, 'Forgot Password' %>
+
+<!-- Forgot Password Form -->
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { role: 'form' }) do |f| %>
+
+  <% if f.full_error :not_approved %>
+    <div class="alert alert-danger">
+      <%= f.full_error :not_approved, class: "text-light-important" %>
+    </div>
+  <% end %>
+
+      <%= f.input :email, autofocus: true, class: 'form-control', placeholder: "Your email.." %>
+
+  <div class="form-group form-actions">
+      <%= f.button :button, 'Reset Password', class: 'btn btn-lg btn-block btn-effect-ripple btn-primary', data: { disable_with: '<i class="fa fa-circle-o-notch fa-spin"></i> loading...' } %>
+  </div>
+<% end %>
+<!-- END Forgot Password -->

@@ -1,0 +1,35 @@
+<!-- Menu Block -->
+<div class="block full">
+  <!-- Menu Title -->
+  <div class="block-title clearfix">
+    <h2>Manage Issues</h2>
+  </div>
+  <!-- END Menu Title -->
+
+  <!-- Menu Content -->
+  <ul class="nav nav-pills nav-stacked">
+    <li id="all-issues">
+      <a href="/issues/?scope=all">
+        <span class="badge pull-right"><%= @all_count %></span>
+        <i class="fa fa-fw fa-ticket icon-push"></i> <strong>All</strong>
+      </a>
+    </li>
+    <li id="open-issues">
+      <a href="/issues/?scope=open">
+        <span class="badge pull-right"><%= @open_count %></span>
+        <i class="fa fa-fw fa-folder-open-o icon-push"></i> <strong>Open</strong>
+      </a>
+    </li>
+    <li id="closed-issues">
+      <a href="/issues/?scope=closed">
+        <span class="badge pull-right"><%= @closed_count %></span>
+        <i class="fa fa-fw fa-folder-o icon-push"></i> <strong>Closed</strong>
+      </a>
+    </li>
+    <li id="new-issues">
+      <%= link_to 'Create New Issue', new_issue_path, class: 'btn btn-effect-ripple btn-default' %>
+    </li>
+  </ul>
+  <!-- END Menu Content -->
+  </div>
+  <!-- END Menu Block -->

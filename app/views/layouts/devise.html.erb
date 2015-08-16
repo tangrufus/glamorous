@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <title>Popn Issues</title>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': true %>
+  <%= stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css' %>
+
+  <%= jquery_include_tag :cloudflare %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
+
+  <%= javascript_include_tag :modernizr %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <!-- Login Container -->
+  <div id="login-container">
+    <!-- Login Header -->
+    <h1 class="h2 text-light text-center push-top-bottom animation-slideDown">
+      <%= link_to '<i class="fa fa-bug"></i> <strong>Popn Issues</strong>'.html_safe, root_path %>
+    </h1>
+    <!-- END Login Header -->
+
+    <!-- Login Block -->
+    <div class="block animation-fadeInQuickInv">
+      <!-- Login Title -->
+      <div class="block-title">
+        <h2><%= yield(:title) %></h2>
+      </div>
+      <!-- END Login Title -->
+
+      <%= render "layouts/messages" %>
+
+      <%= yield %>
+
+    </div>
+    <!-- END Login Block -->
+
+    <!-- Footer -->
+    <footer class="text-muted text-center animation-pullUp">
+      <%= render "devise/shared/links" %>
+      <br />
+      <br />
+      <small>Crafted with <i class="fa fa-heart text-danger"></i> by <a href="mailto:tangrufus@gmail.com" target="_blank">Tang Rufus</a></small>
+      <br>
+      <small><span id="year-copy"></span> &copy; <a href="https://www.pinot.hk" target="_blank">Pinot</a></small>
+    </footer>
+    <!-- END Footer -->
+  </div>
+  <!-- END Login Container -->
+
+</body>
+</html>

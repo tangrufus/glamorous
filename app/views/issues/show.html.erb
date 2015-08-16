@@ -1,0 +1,73 @@
+<%= content_for :header_title, "#{@issue.title} ##{@issue.id}" %>
+
+
+<!-- Issue Content -->
+<div class="row">
+  <div class="col-md-4 col-lg-3">
+
+    <%= render 'issues/menu' %>
+
+  </div>
+  <div class="col-md-8 col-lg-9">
+    <!-- Issue Block -->
+    <div class="block ">
+      <!-- Issue Title -->
+      <div class="block-title clearfix">
+        <h2>Issue #<%= @issue.id %></h2>
+      </div>
+      <!-- END Issue Title -->
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <!-- Issue Single -->
+      <div id="issues-single">
+
+        <div class="btn-group pull-right">
+          <a href="javascript:void(0)" data-toggle="dropdown" class="btn btn-<%= status_color_class(@issue.status) %> dropdown-toggle" aria-expanded="false">Status: <%= @issue.status.titleize %> <span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <% unless @issue.open? %>
+            <li>
+              <%= link_to '<i class="fa fa-folder-open pull-right"></i>
+              Open'.html_safe, change_status_issue_path(status: :open), method: :patch %>
+            </li>
+            <% end %>
+            <% unless @issue.closed? %>
+            <li>
+              <%= link_to '<i class="fa fa-folder pull-right"></i>
+              Closed'.html_safe, change_status_issue_path(status: :closed), method: :patch %>
+            </li>
+            <% end %>
+          </ul>
+          </div>
+
+          <h2><%= @issue.title %></h2>
+          <h4>issue #<%= @issue.id %></h4>
+
+        <hr>
+        <ul class="media-list media-feed push">
+          <!-- Comments -->
+          <%= render @issue.comments %>
+
+          <!-- Reply -->
+          <li>
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1">
+
+                <%= render 'comments/form' %>
+                    </div>
+                  </div>
+                </li>
+
+          <!-- END Replies -->
+        </ul>
+      </div>
+      <!-- END Issue Single -->
+    </div>
+    </div>
+    </div>
+    <!-- END Issue Details -->
+  </div>
+  <!-- END col -->
+</div>
+<!-- END Issue Content -->
