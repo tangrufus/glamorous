@@ -29,9 +29,9 @@ gem 'unicorn', '~> 4.9.0'
 # Heroku
 gem 'rails_12factor', '~> 0.0.3'
 
-# Backgroud jobs
+## Backgroud jobs
 # gem 'sidekiq', '~> 3.4.0'
-# SideKiq web console
+## SideKiq web console
 # gem 'sinatra', '~> 1.4.6', require: nil
 
 # Authentications

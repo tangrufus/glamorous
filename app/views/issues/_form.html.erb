@@ -3,7 +3,7 @@
 <%= f.input :title, required: true, autofocus: true %>
 
 <%= f.simple_fields_for :comments do |c| %>
-<%= c.input :body, as: :text, required: true, input_html: { class: 'markdown-source', rows: 8, 'data-emoji': 'autocomplete', 'data-at-mention': 'autocomplete' } %>
+<%= c.input :body, as: :text, required: true, input_html: { rows: 8, 'data-at-mention': 'autocomplete' } %>
 <% end %>
 
 <div class="form-group form-actions text-right">

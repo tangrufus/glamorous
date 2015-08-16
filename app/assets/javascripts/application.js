@@ -16,7 +16,6 @@
 //
 //= require bootstrap-sprockets
 //= require local_time
-//= require markdown-it
 //= require jquery.atwho
 //= require toastr
 //
