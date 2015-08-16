@@ -8,5 +8,6 @@ $(function () {
        displayTpl: '<li>${username} <small>${email}</small></li>',
        insertTpl: '@${username}',
        delay: 400,
+       limit: 30
   });
 });
