@@ -2,6 +2,6 @@
   <td><strong>@<%= user.username %></strong></td>
   <td><%= mail_to user.email, user.email %></td>
   <td>
-    <%= user.last_sign_in_at ? local_time_ago(user.current_sign_in_at) : 'Never signed in'%>
+    <%= user.current_sign_in_at ? local_time_ago(user.current_sign_in_at) : 'Never signed in'%>
   </td>
 </tr>
