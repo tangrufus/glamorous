@@ -32,8 +32,8 @@ class User < ActiveRecord::Base
   USERNAME_PATTERN = /\A[a-z0-9]+\z/
   USERNAME_AT_MENTION_PATTERN = /[a-z0-9]+/
 
-  # :registerable, :confirmable, :async
-  devise :database_authenticatable,
+  # :confirmable, :async
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :lockable, :timeoutable
 
