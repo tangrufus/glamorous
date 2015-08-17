@@ -1,0 +1,7 @@
+zh-CN:
+  activerecord:
+    models:
+      comment: '留言'
+    attributes:
+      comment:
+        body: '内容'

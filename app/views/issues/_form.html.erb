@@ -1,6 +1,6 @@
 <%= simple_form_for @issue_form, wrapper: :vertical_form do |f| %>
 
-<%= f.input :title, required: true, autofocus: true %>
+<%= f.input :title, label: Issue.human_attribute_name('title'), required: true, autofocus: true %>
 
 <%= f.simple_fields_for :comments do |c| %>
 <%= c.input :body, as: :text, required: true, input_html: { rows: 8, 'data-at-mention': 'autocomplete' } %>

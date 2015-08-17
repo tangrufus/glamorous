@@ -1,4 +1,4 @@
-<%= content_for :header_title, 'Users' %>
+<%= content_for :header_title, User.model_name.human %>
 
 <!-- Issues Content -->
 <div class="row">
@@ -7,7 +7,7 @@
     <div class="block">
       <!-- Issues Title -->
       <div class="block-title clearfix">
-        <h2>User List</h2>
+        <h2>用户列表</h2>
       </div>
       <!-- END Issues Title -->
 
@@ -18,9 +18,9 @@
               <table class="table table-striped table-bordered table-vcenter remove-margin-bottom">
                 <thead>
                   <tr>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Last Sign In</th>
+                    <th><%= User.human_attribute_name('username') %></th>
+                    <th><%= User.human_attribute_name('email') %></th>
+                    <th>最后登录时间</th>
                   </tr>
                 </thead>
                 <tbody>

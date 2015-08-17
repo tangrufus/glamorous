@@ -1,0 +1,11 @@
+zh-CN:
+  activerecord:
+    models:
+      issue: '话题'
+    attributes:
+      issue:
+        title: '标题'
+        status: '状态'
+      issue/status:
+        open: 'Open'
+        closed: 'Closed'

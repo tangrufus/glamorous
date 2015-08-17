@@ -1,4 +1,4 @@
-<%= content_for :title, 'Account Settings' %>
+<%= content_for :title, '帐户设置' %>
 
 <!-- User Edit Form -->
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, role: 'form' }) do |f| %>
@@ -12,17 +12,17 @@
 <% end %>
 
 <div class="col-xs-12">
-  <p>Your email: <%= current_user.email %></p>
-  <p>Your username: <%= current_user.username %></p>
+  <p>你的<%= User.human_attribute_name('email') %>: <%= current_user.email %></p>
+  <p>你的<%= User.human_attribute_name('username') %>: <%= current_user.username %></p>
 </div>
 
-  <%= f.input :current_password, class: 'form-control', placeholder: "Current password..", required: true, hint: 'you must enter your current password to make changes' %>
+  <%= f.input :current_password, class: 'form-control', placeholder: "当前#{User.human_attribute_name('password')}..", required: true %>
 
-  <%= f.input :password, class: 'form-control', placeholder: "New password.." %>
-  <%= f.input :password_confirmation, class: 'form-control', placeholder: "New password again.." %>
+  <%= f.input :password, class: 'form-control', placeholder: "新#{User.human_attribute_name('password')}.." %>
+  <%= f.input :password_confirmation, class: 'form-control', placeholder: "再次输入新#{User.human_attribute_name('username')}.." %>
 
 <div class="form-group form-actions">
-    <%= f.button :button, 'Update Password', class: 'btn btn-lg btn-block btn-effect-ripple btn-primary', data: { disable_with: '<i class="fa fa-circle-o-notch fa-spin"></i> loading...' } %>
+    <%= f.button :button, "更改#{User.human_attribute_name('password')}", class: 'btn btn-lg btn-block btn-effect-ripple btn-primary', data: { disable_with: '<i class="fa fa-circle-o-notch fa-spin"></i> loading...' } %>
   </div>
 <% end %>
 <!-- END User Edit Form -->

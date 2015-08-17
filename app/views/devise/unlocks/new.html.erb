@@ -1,10 +1,10 @@
-<%= content_for :title, 'Unlock Account' %>
+<%= content_for :title, '解除帐户封锁' %>
 
 <%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { role: 'form' }) do |f| %>
 
   <%= f.input :email, required: true, autofocus: true, class: 'form-control', placeholder: "Enter your email.." %>
 
   <div class="form-group form-actions">
-    <%= f.button :button, 'Resend unlock instructions', class: 'btn btn-lg btn-block btn-effect-ripple btn-primary', data: { disable_with: '<i class="fa fa-circle-o-notch fa-spin"></i> loading...' } %>
+    <%= f.button :button, '重发解锁电邮', class: 'btn btn-lg btn-block btn-effect-ripple btn-primary', data: { disable_with: '<i class="fa fa-circle-o-notch fa-spin"></i> loading...' } %>
   </div>
 <% end %>

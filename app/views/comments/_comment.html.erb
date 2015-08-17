@@ -4,7 +4,7 @@
 
       <%= div_for(comment) do %>
       <p class="push-bit">
-        <strong>@<%= comment.user.username %></strong> commented <strong><%= local_time_ago(comment.created_at) %></strong>
+        <strong>@<%= comment.user.username %></strong> 在 <strong><%= local_time_ago(comment.created_at) %></strong> 留言：
       </p>
       <%= markdownify(comment.body) %>
       <% end %>

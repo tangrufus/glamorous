@@ -29,6 +29,9 @@ gem 'unicorn', '~> 4.9.0'
 # Heroku
 gem 'rails_12factor', '~> 0.0.3'
 
+# Locale
+gem 'rails-i18n', '~> 4.0.0'
+
 ## Backgroud jobs
 # gem 'sidekiq', '~> 3.4.0'
 ## SideKiq web console
@@ -36,6 +39,7 @@ gem 'rails_12factor', '~> 0.0.3'
 
 # Authentications
 gem 'devise', '~> 3.5.0'
+gem 'devise-i18n', '~> 0.12.1'
 # gem 'devise-async', '~> 0.10.1'
 
 # Models

@@ -2,7 +2,7 @@
 <div class="block full">
   <!-- Menu Title -->
   <div class="block-title clearfix">
-    <h2>Manage Issues</h2>
+    <h2>话题管理</h2>
   </div>
   <!-- END Menu Title -->
 
@@ -11,23 +11,23 @@
     <li id="all-issues">
       <a href="/issues/?scope=all">
         <span class="badge pull-right"><%= @all_count %></span>
-        <i class="fa fa-fw fa-ticket icon-push"></i> <strong>All</strong>
+        <i class="fa fa-fw fa-ticket icon-push"></i> <strong>所有</strong>
       </a>
     </li>
     <li id="open-issues">
       <a href="/issues/?scope=open">
         <span class="badge pull-right"><%= @open_count %></span>
-        <i class="fa fa-fw fa-folder-open-o icon-push"></i> <strong>Open</strong>
+        <i class="fa fa-fw fa-folder-open-o icon-push"></i> <strong><%= Issue.human_attribute_name('status.open') %></strong>
       </a>
     </li>
     <li id="closed-issues">
       <a href="/issues/?scope=closed">
         <span class="badge pull-right"><%= @closed_count %></span>
-        <i class="fa fa-fw fa-folder-o icon-push"></i> <strong>Closed</strong>
+        <i class="fa fa-fw fa-folder-o icon-push"></i> <strong><%= Issue.human_attribute_name('status.closed') %></strong>
       </a>
     </li>
     <li id="new-issues">
-      <%= link_to 'Create New Issue', new_issue_path, class: 'btn btn-effect-ripple btn-default' %>
+      <%= link_to '新增话题', new_issue_path, class: 'btn btn-effect-ripple btn-default' %>
     </li>
   </ul>
   <!-- END Menu Content -->

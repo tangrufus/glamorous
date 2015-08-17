@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     @comment_form.submit(comment_params)
 
     if @comment_form.save
-      flash[:success] = 'Comment added successfully'
+      flash[:success] = '成功添加留言'
     else
       flash[:error] = @comment_form.errors.full_messages.uniq.join('. ')
     end

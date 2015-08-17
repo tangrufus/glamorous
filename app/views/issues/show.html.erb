@@ -13,7 +13,7 @@
     <div class="block ">
       <!-- Issue Title -->
       <div class="block-title clearfix">
-        <h2>Issue #<%= @issue.id %></h2>
+        <h2>话题 #<%= @issue.id %></h2>
       </div>
       <!-- END Issue Title -->
 
@@ -24,18 +24,18 @@
       <div id="issues-single">
 
         <div class="btn-group pull-right">
-          <a href="javascript:void(0)" data-toggle="dropdown" class="btn btn-<%= status_color_class(@issue.status) %> dropdown-toggle" aria-expanded="false">Status: <%= @issue.status.titleize %> <span class="caret"></span></a>
+          <a href="javascript:void(0)" data-toggle="dropdown" class="btn btn-<%= status_color_class(@issue.status) %> dropdown-toggle" aria-expanded="false"><%= Issue.human_attribute_name('status') %>: <%= @issue.status.titleize %> <span class="caret"></span></a>
           <ul class="dropdown-menu dropdown-menu-right">
             <% unless @issue.open? %>
             <li>
-              <%= link_to '<i class="fa fa-folder-open pull-right"></i>
-              Open'.html_safe, change_status_issue_path(status: :open), method: :patch %>
+              <%= link_to "<i class='fa fa-folder-open pull-right'></i>
+              #{Issue.human_attribute_name('status.open')}".html_safe, change_status_issue_path(status: :open), method: :patch %>
             </li>
             <% end %>
             <% unless @issue.closed? %>
             <li>
-              <%= link_to '<i class="fa fa-folder pull-right"></i>
-              Closed'.html_safe, change_status_issue_path(status: :closed), method: :patch %>
+              <%= link_to "<i class='fa fa-folder pull-right'></i>
+              #{Issue.human_attribute_name('status.closed')}".html_safe, change_status_issue_path(status: :closed), method: :patch %>
             </li>
             <% end %>
           </ul>

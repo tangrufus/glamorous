@@ -1,14 +1,14 @@
-<%= content_for :title, 'Login' %>
+<%= content_for :title, '登录' %>
 
 <!-- Login Form -->
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form', class: 'form-horizontal form-bordered' }, wrapper: :horizontal_form) do |f| %>
 <%= devise_error_messages! %>
 
-<%= f.input :login, autofocus: true, placeholder: "Your username or email..", required: true %>
-<%= f.input :password, placeholder: "Your password..", required: true %>
+<%= f.input :login, autofocus: true, label: "#{User.human_attribute_name('username')}或#{User.human_attribute_name('email')}", required: true %>
+<%= f.input :password, required: true %>
 
 <div class="form-group user_remember_me">
-  <label class="remember-me col-sm-4 control-label" for="user_remember_me">Remember?</label>
+  <label class="remember-me col-sm-4 control-label" for="user_remember_me">记住我?</label>
   <div class="col-sm-8">
     <label class="csscheckbox csscheckbox-primary">
       <%= f.check_box :remember_me %>
@@ -19,7 +19,7 @@
 
 <div class="form-group form-actions">
   <div class="col-sm-12">
-    <%= f.button :button, 'Login', class: "pull-right btn btn-lg btn-block btn-effect-ripple btn-primary", data: { disable_with: "<i class='fa fa-circle-o-notch fa-spin'></i> loading..." } %>
+    <%= f.button :button, '登录', class: "pull-right btn btn-lg btn-block btn-effect-ripple btn-primary", data: { disable_with: "<i class='fa fa-circle-o-notch fa-spin'></i> loading..." } %>
   </div>
 </div>
 

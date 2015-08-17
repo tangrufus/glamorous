@@ -17,7 +17,7 @@ class IssuesController < ApplicationController
     @issue_form.comments.first.issue = @issue_form.model
 
     if @issue_form.save
-      flash[:success] = 'Issue created successfully'
+      flash[:success] = '成功添加话题'
       redirect_to @issue_form
     else
       flash[:error] = @issue_form.errors.full_messages.uniq.join('. ')
@@ -32,7 +32,7 @@ class IssuesController < ApplicationController
   def change_status
     @issue = Issue.find(params[:id])
     if @issue.update(status: issue_status_params)
-      flash[:success] = 'Issue updated'
+      flash[:success] = '成功修改话题'
     else
       flash[:error] = @issue.errors.full_messages.uniq.join('. ')
     end
