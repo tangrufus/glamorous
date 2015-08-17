@@ -7,10 +7,11 @@ class CommentsController < ApplicationController
 
     if @comment_form.save
       flash[:success] = '成功添加留言'
+      redirect_to issue_path(@issue, anchor: "comment_#{@comment_form.model.id}")
     else
       flash[:error] = @comment_form.errors.full_messages.uniq.join('. ')
+      redirect_to @issue
     end
-    redirect_to @issue
   end
 
   private

@@ -21,3 +21,10 @@
 @import "appui/plugins";
 @import "appui/main";
 @import "appui/themes";
+
+.comment {
+  &:target {
+    background-color: rgb(248, 238, 199);
+    padding: 5px 10px;
+  }
+}

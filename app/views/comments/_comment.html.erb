@@ -1,15 +1,13 @@
 <li>
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
-
       <%= div_for(comment) do %>
-      <p class="push-bit">
-        <strong>@<%= comment.user.username %></strong> 在 <strong><%= local_time_ago(comment.created_at) %></strong> 留言：
-      </p>
-      <%= markdownify(comment.body) %>
+        <p class="push-bit">
+          <strong>@<%= comment.user.username %></strong> 在 <strong><%= local_time_ago(comment.created_at) %></strong> 留言：
+        </p>
+        <%= markdownify(comment.body) %>
       <% end %>
       <hr>
-
     </div>
   </div>
 </li>

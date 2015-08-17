@@ -10,9 +10,21 @@ function getUrlVar(key){
 $(function () {
 
   if (! $("body").hasClass("issues index"))
-        return;
+    return;
 
   $scope = getUrlVar("scope") || "open";
   $selector = "li#" +  $scope + "-issues";
   $( $selector ).addClass( "active" );
+});
+
+$(function () {
+  if (! $("body").hasClass("issues show"))
+    return;
+
+  setTimeout( function() {
+    if (! $(":target").hasClass("comment"))
+      return;
+
+    $( ":target" ).css({ backgroundColor: "white" });
+  }, 2000);
 });
