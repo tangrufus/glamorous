@@ -163,7 +163,7 @@ GEM
     local_time (1.0.2)
       coffee-rails
     logger-colors (1.0.0)
-    loofah (2.0.2)
+    loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
