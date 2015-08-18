@@ -173,6 +173,7 @@ GEM
     modernizr-rails (2.7.1)
     multi_json (1.11.2)
     netrc (0.10.3)
+    newrelic_rpm (3.13.0.299)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
     nokogumbo (1.4.1)
@@ -323,6 +324,7 @@ DEPENDENCIES
   jquery-turbolinks (~> 2.1.0)
   local_time (~> 1.0.2)
   modernizr-rails (~> 2.7.1)
+  newrelic_rpm (~> 3.13.0.299)
   pg
   rails (= 4.2.3)
   rails-assets-toastr (~> 2.1.1)!

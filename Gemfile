@@ -26,6 +26,8 @@ gem 'jquery-turbolinks', '~> 2.1.0'
 # Use Unicorn as the app server
 gem 'unicorn', '~> 4.9.0'
 
+gem 'newrelic_rpm', '~> 3.13.0.299'
+
 # Heroku
 gem 'rails_12factor', '~> 0.0.3'
 
