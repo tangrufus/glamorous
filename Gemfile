@@ -80,4 +80,4 @@ group :development, :test do
   gem 'rubocop', '~> 0.33.0', require: false
 end
 
-ruby '2.2.2'
+ruby '2.2.3'
