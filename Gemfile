@@ -73,7 +73,7 @@ group :development, :test do
   gem 'annotate', '~> 2.6.5'
   gem 'better_errors', '~> 2.1.1'
   gem 'binding_of_caller', '~> 0.7.2'
-  gem 'did_you_mean', '~> 0.9.8'
+  gem 'did_you_mean', '~> 0.10.0'
   gem 'foreman', '~> 0.78.0'
   gem 'brakeman', '~> 3.0.2', require: false
   gem 'dawnscanner', '~> 1.3.1', require: false
